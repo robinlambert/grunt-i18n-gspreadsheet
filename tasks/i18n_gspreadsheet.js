@@ -106,7 +106,7 @@ module.exports = function(grunt) {
         // First determine which locales are supported
         var gsheet_keys = _(rows[0]).keys();
         _(gsheet_keys).each(function(locale){
-          if ( locale != 'id' && locale.length == 2 ){
+          if ( locale != 'id' && (locale.length == 2 || locale.length == 5) ){
             locales.push( locale );
             translations[locale] = {};
             if (regex_filter) {
